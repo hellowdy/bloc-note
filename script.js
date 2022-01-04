@@ -18,10 +18,10 @@ noteBtn.addEventListener("click", (e) => {
   e.preventDefault();
 
   if (noteTitle.value == "" || noteText.value == "") {
-    return alert("please add note title and details");
+    return alert("S'il-vous-plaît ajouter une note");
   }
 
-  getNotes(); // notesObj array
+  getNotes(); // notesObj array..
 
   let myObj = {
     title: noteTitle.value,
@@ -45,10 +45,10 @@ function showNotes() {
           <p class="note-counter">Note ${index + 1}</p>
           <div class="note-cta-btn">
             <button id="${index}" onclick="deleteNote(this.id)" class="note-btn">
-              <i class="fas fa-trash"></i> Delete
+              <i class="fas fa-trash"></i> Supprimer
             </button>
             <button id="${index}" onclick="editNote(this.id)" class="note-btn edit-btn">
-              <i class="fas fa-edit"></i> Edit
+              <i class="fas fa-edit"></i> Modifier
             </button>
           </div>
         </div>
@@ -63,13 +63,13 @@ function showNotes() {
   if (notesObj.length != 0) {
     noteElm.innerHTML = html;
   } else {
-    noteElm.innerHTML = "No notes added, Please add a note";
+    noteElm.innerHTML = "Pas de note, s'il-vous-plaît ajouter une note";
   }
 }
 
 // DELETE A SINGLE NOTE
 function deleteNote(index) {
-  let confirmDel = confirm("Delete this note");
+  let confirmDel = confirm("Supprime la note");
   if (confirmDel) {
     getNotes();
     notesObj.splice(index, 1);
@@ -87,7 +87,7 @@ clear.addEventListener("click", () => {
 // Edit note
 function editNote(index) {
   if (noteTitle.value !== "" || noteText.value !== "") {
-    return alert("Please clear the form before editing");
+    return alert("S'il-vous-plaît nettoyer le formulaire avant de le modifier");
   }
   getNotes();
 
